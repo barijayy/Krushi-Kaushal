@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* KrishiKausal AgriTech Theme */
+    --background: 40 30% 97%;
+    --foreground: 150 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 25% 15%;
+
+    /* Deep forest green */
+    --primary: 152 45% 28%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Warm earth */
+    --secondary: 35 40% 92%;
+    --secondary-foreground: 150 25% 15%;
+
+    --muted: 35 25% 90%;
+    --muted-foreground: 150 15% 45%;
+
+    /* Amber accent */
+    --accent: 38 92% 50%;
+    --accent-foreground: 150 25% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 152 45% 28%;
+
+    --radius: 0.75rem;
+
+    /* Status colors */
+    --status-optimal: 142 70% 45%;
+    --status-warning: 38 92% 50%;
+    --status-critical: 0 72% 51%;
+
+    /* Chart colors */
+    --chart-1: 152 45% 38%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 200 70% 50%;
+    --chart-4: 280 60% 50%;
+    --chart-5: 0 72% 51%;
+
+    /* Sidebar */
+    --sidebar-background: 152 25% 18%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 150 25% 15%;
+    --sidebar-accent: 152 30% 25%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 152 20% 25%;
+    --sidebar-ring: 38 92% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 45% 28%), hsl(152 45% 38%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 95% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(35 40% 92%) 100%);
+  }
+
+  .dark {
+    --background: 150 25% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 150 20% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 150 20% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 152 50% 45%;
+    --primary-foreground: 150 25% 8%;
+
+    --secondary: 150 15% 18%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 150 15% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 150 25% 8%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 20%;
+    --input: 150 15% 20%;
+    --ring: 152 50% 45%;
+
+    --status-optimal: 142 70% 50%;
+    --status-warning: 38 92% 55%;
+    --status-critical: 0 72% 55%;
+
+    --sidebar-background: 150 25% 6%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 150 25% 8%;
+    --sidebar-accent: 150 20% 15%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 150 15% 15%;
+    --sidebar-ring: 38 92% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(152 50% 35%), hsl(152 50% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(150 25% 8%) 0%, hsl(150 20% 12%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .sensor-card {
+    @apply bg-card rounded-xl border border-border p-4 transition-all duration-200;
+    @apply hover:shadow-lg hover:shadow-primary/5;
+  }
+
+  .status-optimal {
+    @apply text-[hsl(var(--status-optimal))];
+  }
+
+  .status-warning {
+    @apply text-[hsl(var(--status-warning))];
+  }
+
+  .status-critical {
+    @apply text-[hsl(var(--status-critical))];
+  }
+
+  .status-bg-optimal {
+    @apply bg-[hsl(var(--status-optimal)/0.15)];
+  }
+
+  .status-bg-warning {
+    @apply bg-[hsl(var(--status-warning)/0.15)];
+  }
+
+  .status-bg-critical {
+    @apply bg-[hsl(var(--status-critical)/0.15)];
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .joystick-base {
+    @apply w-48 h-48 rounded-full bg-secondary border-4 border-border relative;
+    @apply shadow-inner;
+  }
+
+  .joystick-knob {
+    @apply w-20 h-20 rounded-full gradient-primary absolute;
+    @apply shadow-lg cursor-grab active:cursor-grabbing;
+    @apply transition-transform duration-75;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
