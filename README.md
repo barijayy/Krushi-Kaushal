@@ -1,6 +1,6 @@
-# KrishiKausal
+# Krushi Kaushal
 
-The **KrishiKausal** is a comprehensive software suite designed to monitor agricultural metrics and remotely control a 6-wheel or 4-wheel rover. The system consists of a web-based **Dashboard (Frontend)** and a **Raspberry Pi Onboard Agent (Backend)**.
+The **Krushi Kaushal** is a comprehensive software suite designed to monitor agricultural metrics and remotely control a 6-wheel or 4-wheel rover. The system consists of a web-based **Dashboard (Frontend)** and a **Raspberry Pi Onboard Agent (Backend)**.
 
 It provides a dashboard for tracking agricultural metrics (soil moisture, temperature, pH, NPK, etc.), accompanied by a backend API that interfaces directly with hardware sensors and a physical rover vehicle's motor controller.
 
